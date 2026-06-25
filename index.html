@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas · Seguro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1">
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <span class="material-symbols-outlined">password</span>
+            <h1>Gerador<span class="badge">🔒 seguro</span></h1>
+        </div>
+
+        <!-- exibição da senha -->
+        <div class="password-display">
+            <input type="text" id="passwordOutput" value="s3G#7kL!qWz" readonly>
+            <div class="actions">
+                <button class="icon-btn" id="copyBtn" aria-label="Copiar senha">
+                    <span class="material-symbols-outlined">content_copy</span>
+                </button>
+                <button class="icon-btn" id="refreshBtn" aria-label="Gerar nova senha">
+                    <span class="material-symbols-outlined">refresh</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- indicador de força -->
+        <div class="strength-section">
+            <span class="strength-label"><span class="material-symbols-outlined">shield</span> Força</span>
+            <div class="strength-bar">
+                <span class="bar-segment" id="seg1"></span>
+                <span class="bar-segment" id="seg2"></span>
+                <span class="bar-segment" id="seg3"></span>
+                <span class="bar-segment" id="seg4"></span>
+            </div>
+            <span id="strengthText">Média</span>
+        </div>
+
+        <!-- controles -->
+        <div class="controls">
+            <div class="control-group">
+                <label><span class="material-symbols-outlined">format_size</span> Comprimento</label>
+                <div class="slider-wrapper">
+                    <input type="range" id="lengthSlider" min="6" max="50" value="14">
+                    <span id="lengthValue">14</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label><span class="material-symbols-outlined">checklist</span> Incluir</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="chkUpper" checked> ABC
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="chkLower" checked> abc
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="chkDigits" checked> 123
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="chkSymbols" checked> #&@
+                    </label>
+                </div>
+            </div>
+            <button class="generate-btn" id="generateBtn">
+                <span class="material-symbols-outlined">autorenew</span> Gerar senha
+            </button>
+        </div>
+
+        <div class="footer-note">
+            <span><span class="material-symbols-outlined">check_circle</span> 100% local</span>
+            <span><span class="material-symbols-outlined">sync_alt</span> criptografia cliente</span>
+            <span><span class="material-symbols-outlined">verified</span> boas práticas</span>
+        </div>
+    </div>
+
+    <!-- toast de notificação -->
+    <div id="toast" class="toast-message">📋 Copiado!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
